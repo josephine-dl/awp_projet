@@ -2,16 +2,6 @@
     
     include_once ('conn.php') ;
 
-    // default = GET 
-    $id = $_GET['id'] ;
-    //echo ($id) ;  
-
-    if ($id==null){
-        // redirect the user 
-        header('Location: listBook.php') ; 
-    }
-    else { 
-
         if (isset($_POST['add'])){
             echo ("add button has been clicked") ; 
             $title = $_POST['title'] ; 
@@ -40,7 +30,6 @@
                 echo ("error in updating the record ") ; 
             }
         }
-    }
 ?>
 
 
@@ -50,11 +39,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Edit Book</title>
+        <title>Add Book</title>
     </head>
     <body>
-        Profile Update 
-        <!--  method post -> URL hidden -->
+
+        
         <br>
         <form action="" method="post" name="frmAdd">
 
@@ -65,7 +54,7 @@
             Date of publication <input type="date" value="" name="date"> <br>
             Publishing House<input type="text" value="" name="house"> <br>
             Language <input type="text" value="" name="language"> <br>
-            Cover <input type="image" value="" name="cover"> <br>
+            Cover <input type="file" value="" name="cover"> <br>
             File <input type="file" value="" name="file"> <br>
             <input type="submit" value="Update Profile" name="add">
 

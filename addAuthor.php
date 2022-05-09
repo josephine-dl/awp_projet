@@ -2,16 +2,6 @@
     
     include_once ('conn.php') ;
 
-    // default = GET 
-    $id = $_GET['id'] ;
-    //echo ($id) ;  
-
-    if ($id==null){
-        // redirect the user 
-        header('Location: listAuthors.php') ; 
-    }
-    else { 
-
         if (isset($_POST['add'])){
             echo ("add button has been clicked") ; 
             $fname = $_POST['fname'] ; 
@@ -32,7 +22,6 @@
                 echo ("error in updating the record ") ; 
             }
         }
-    }
 ?>
 
 
@@ -45,8 +34,8 @@
         <title>Add Auhtor</title>
     </head>
     <body>
-        Author added 
-        <!--  method post -> URL hidden -->
+        
+        <h1>Add an Author</h1>
         <br>
         <form action="" method="post" name="frmAdd">
 

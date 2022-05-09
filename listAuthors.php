@@ -7,7 +7,8 @@
         <title>List of auhtors</title>
     </head>
     <body>
-
+        <h1>List of auhtors </h1>
+        <a href="addBook.php">Add an author </a>
         
     </body>
 </html>
@@ -16,7 +17,7 @@
 
     include_once ('conn.php') ; 
 
-    $sql_query = "SELECT * FROM author ORDER BY id_book" ; 
+    $sql_query = "SELECT * FROM author ORDER BY id_author" ; 
     $result = mysqli_query($conn, $sql_query) ;
     
     // fetch_assoc -> with name or index *

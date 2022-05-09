@@ -7,7 +7,8 @@
         <title>List of books</title>
     </head>
     <body>
-
+        <h1>List of books </h1>
+        <a href="addBook.php">Add a book </a>
         
     </body>
 </html>
@@ -47,17 +48,20 @@
             | 
             <a href ='deleteBook.php?id=".$row['id_book']."'>Delete</a> 
         </td>" ; 
-        echo "<td>".$row ['id_book']."</td>" ; 
-        echo "<td>".$row ['title']."</td>" ; 
+        echo "<th>".$row ['id_book']."</th>" ; 
+        echo "<th>".$row ['title']."</th>" ; 
         echo "<th>".$row ['first_name']. " " .$row ['last_name']."</th>" ; 
         echo "<th>".$row ['summary']. "</th>" ; 
         echo "<th>".$row ['genre']."</th>" ; 
         echo "<th>".$row ['publication_date']. "</th>" ;
         echo "<th>".$row ['publishing_house']."</th>" ; 
         echo "<th>".$row ['nb_pages']. "</th>" ;
-        echo "<th>".$row ['language_book']."</th>" ; 
-        echo "<th>".$row ['file']. "</th>" ;       
-        echo "<td>  <img src='".$row ['cover']. "' alt='image_book'> </td>" ; 
+        echo "<th>".$row ['language_book']."</th>" ;        
+        echo "<th>  <img src='".$row ['cover']. "' alt='image_book'> </th>" ; 
+        //echo "<th>".$row ['file']. "</th>" ;
+        echo "<th> <a href='".$row ['file']. "' download>
+                    <img src='download.svg' alt='download logo'>
+                </a>" ; 
         echo "</tr>" ; 
        
     }
