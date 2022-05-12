@@ -1,0 +1,363 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/*==================Header==================*/
+
+header{
+    height: 80px;
+    width: 100%;
+    display: block;
+    background-color: #2F4F4F;
+}
+
+.inner_header{
+    width:100%;
+    height:100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.logo_header{
+    height: 100%;
+    display: table;
+    float:left;
+}
+
+.logo_header img{
+    /*Vide pour le moment*/
+}
+
+.logo_header h1{
+    color: black;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 32px;
+    font-weight: 200;
+}
+
+.navigation{
+    float: right;
+    height: 100%;
+}
+
+.navigation a{
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 20px ;
+}
+
+.navigation a li{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: black;
+}
+
+.navigation a li:hover{
+    color: #C0C0C0;
+    transition: 0.5s;
+}
+
+.navigation .menu_member{
+    width: 200px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navigation .menu_member li{
+    background: #c00 ;
+  color: #fff ;
+  border: 1px solid #600 ;
+  margin-bottom: 1px ;
+}
+.navigation .menu_member li a{
+    display: block ;
+  background: #c00 ;
+  color: #fff ;
+  font: 1em "Trebuchet MS",Arial,sans-serif ;
+  line-height: 1em ;
+  text-align: center ;
+  text-decoration: none ;
+  padding: 4px 0 ;
+}
+
+/*==================End Header==================*/
+
+/*==================Search bar==================*/
+
+.boxcontainer{
+    margin: auto;
+    margin-top: 10%;
+    position: relative;
+    width: 300px;
+    height: 42px;
+    border: 4px solid #2F4F4F;
+    padding: 0px 10px;
+    border-radius: 50px;
+}
+
+.elcontainer{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle; 
+}
+
+.search-area{
+    border: none;
+    height: 50%;
+    width: 100%;
+    padding: 7px 4px 2px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: "Nunito";
+    color: #2F4F4F;
+    font-weight: 500;
+}
+
+.search-area:focus{
+    outline:none;
+}
+
+.search-btn{
+    background: none;
+    border-style: none;
+}
+
+.search-btn i{
+    font-size: 30px;
+    border-radius: 50px;
+    color: #2F4F4F;
+    background: none;
+    padding-left: 10px;
+}
+
+.search-btn i:hover{
+    color: #6f9696;
+    transition: 0.5s;
+}
+/*==================End Search bar==================*/
+/*==================Book presentation==================*/
+ 
+.title_book{
+    width: 100%;
+    border-top: 2px solid #2F4F4F;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+
+.container_book1{
+    display: inline-block;
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+}
+
+.container_book2{
+    display: inline-block;
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+}
+
+.container_book3{
+    display: inline-block;
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+}
+
+.item_book{
+    display: inline-block;
+    width: 175px;
+    height: 300px;
+    margin: 25px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #2F4F4F;
+    border: 2px solid rgba(111,41,97,.5);
+    /*Rajouter le text au survole*/
+    cursor: pointer;
+    overflow: hidden;
+}
+.content_book{
+    opacity: 0;
+}
+
+.content_book:hover{
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.button_book{
+    color: #fff !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #ed3330;
+	padding: 20px;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+}
+
+.button_book:hover{
+    background: #434343;
+	letter-spacing: 1px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}
+
+@media screen and (max-width: 600px)
+{
+     .container_book1, .container_book2
+     {
+          max-width: 100%;
+     }
+}
+
+/*==================End book presentation==================*/
+
+/*================== Carrousel ==================*/
+
+
+.swiper{
+    width: 1080px;
+}
+section .card .image{
+    width: 175px;
+    height: 300px;
+    padding: 5px;
+    border-radius: 10px;
+    background: #2F4F4F;
+}
+
+section .card .image img{
+    width: 175px;
+    height: 300px;
+    object-fit: cover;
+    padding: 3px;
+    background: #2F4F4F;
+}
+
+.card{
+    position: relative;
+    width: 175px;
+    height: 300px;
+    background: #2F4F4F;
+    border-radius: 10px;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+}
+
+.card .card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+  
+/*================== End Carrousel ==================*/
+/*================== Footer ==================*/
+
+footer{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    padding-top: 50px;
+    margin-top: 50px;
+    background: #2F4F4F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+  
+footer p:nth-child(1){
+    font-size: 30px;
+    color:#fff;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+footer p:nth-child(2){
+    font-size: 18px;
+    color:#fff;
+}
+  
+footer p:nth-child(3){
+    font-size: 18px;
+    color:#fff;
+    width: 500px;
+    text-align: center;
+    line-height: 26px;
+    margin-top: 30px;
+}
+  
+footer .social{
+    display: flex;
+}
+  
+footer .social a{
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: aliceblue;
+    line-height: 1;
+    margin-top: 10px;
+    margin-right: 8px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+  
+footer .social a:hover{
+    transform: scale(1.3);
+    transition: 0.3s;
+    background: #1E90FF;
+}
+  
+footer .end{
+    position: absolute;
+    color:#1E90FF;
+    bottom: 35px;
+    font-size: 14px;   
+}
+  
+footer .end i{
+    margin-right: 5px;    
+}
+  
+footer .nav-menu {
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+  
+footer img{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    margin-top: -20px;
+}
+
+/*================== End Footer ==================*/
+
+/*================== Log In ==================*/
+
