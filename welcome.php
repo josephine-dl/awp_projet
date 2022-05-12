@@ -42,8 +42,8 @@ if (!isset($_SESSION['username'])) {
                             <?php 
                             // voir comment on modifie et delete les livres
                             if($_SESSION['username'] == 'admin'){
-                                echo "<li><a href='Modify.php'>Modify book</a></li>";
-                                echo "<li><a href='delete.php'>Delete book</a></li>";
+                                echo "<li><a href='Modify.php'>Gestion of book</a></li>";
+                                echo "<li><a href='delete.php'>Gestion of author</a></li>";
                                 echo "<li><a href='listuser.php'>List of User</a></li>";
                             }
                             ?>
