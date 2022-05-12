@@ -28,7 +28,7 @@ header{
 }
 
 .logo_header img{
-    //Vide pour le moment
+    /*Vide pour le moment*/
 }
 
 .logo_header h1{
@@ -63,6 +63,29 @@ header{
 .navigation a li:hover{
     color: #C0C0C0;
     transition: 0.5s;
+}
+
+.navigation .menu_member{
+    width: 200px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navigation .menu_member li{
+    background: #c00 ;
+  color: #fff ;
+  border: 1px solid #600 ;
+  margin-bottom: 1px ;
+}
+.navigation .menu_member li a{
+    display: block ;
+  background: #c00 ;
+  color: #fff ;
+  font: 1em "Trebuchet MS",Arial,sans-serif ;
+  line-height: 1em ;
+  text-align: center ;
+  text-decoration: none ;
+  padding: 4px 0 ;
 }
 
 /*==================End Header==================*/
@@ -335,3 +358,6 @@ footer img{
 }
 
 /*================== End Footer ==================*/
+
+/*================== Log In ==================*/
+

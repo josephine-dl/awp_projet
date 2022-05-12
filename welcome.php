@@ -1,3 +1,12 @@
+<?php 
+
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: page_accueil.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +22,6 @@
         
     </head>
 
-
     <body>
 
         <!-- On va faire le header -->
@@ -27,8 +35,20 @@
                     </div>
 
                     <ul class="navigation">
-                        <a href="about/about.php"><li>About Us</li></a>
-                        <a href="log-in/login.php"><li>Log In</li></a>
+                        <button id="button_membre" onclick="buttonFonction()"><?php echo "<h1>Welcome " . $_SESSION['username'] . "</h1>"; ?>
+                        <ul id="menu_member" style="display: none;">  
+                            <li><a href="profil.php">Profil</a></li>
+                            <li><a href="Download.php">Download</a></li>
+                            <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<li><a href='Modify.php'>Modify book</a></li>";
+                                echo "<li><a href='delete.php'>Delete book</a></li>";
+                                echo "<li><a href='listuser.php'>List of User</a></li>";
+                            }
+                            ?>
+                            <li><a href="logout.php">Logout</a></li>
+                        </ul></button>
                     </ul>
                 </div>
             </header>
@@ -50,12 +70,8 @@
                 </table>
             </form>
             </div>
-            <br><br><br>
-            <ul>
-                <?php include "function.php"; ?>
-                <?php get_prod_search(); ?>
-            </ul>  
-            <br><br><br><br><br><br>
+
+
         </section>
 
         <section>
@@ -69,7 +85,14 @@
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
                         
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>   
                 </div>
 
@@ -77,7 +100,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download" >
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -85,7 +115,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -93,7 +130,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -101,7 +145,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -109,7 +160,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -124,7 +182,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -132,7 +197,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -140,7 +212,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -148,7 +227,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -156,7 +242,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -164,7 +257,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -179,7 +279,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -187,7 +294,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -195,7 +309,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -203,7 +324,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -211,7 +339,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -219,7 +354,14 @@
                     <img src="" alt="picture book">
                     <div class="content_book">
                         <p>Book ...  gierbgqe ubgqergq greg rgbqergube erugbergb ergrg rg  rg rg </p>
-                        <input class="button_book" type="button" value="download" onClick="alert('Log In fisrt');">
+                        <input class="button_book" type="button" value="download">
+                        <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<input class='button_book' type='button' value='Modify'>";
+                                echo "<input class='button_book' type='button' value='delete'>";
+                            }
+                        ?>
                     </div>
                 </div>
 
@@ -319,8 +461,18 @@
           prevEl: ".swiper-button-prev",
         },
       });
+
+      function buttonFonction() {
+        var div = document.getElementById("menu_member");
+        if (div.style.display === "none") {
+            div.style.display = "block";
+        } else {
+            div.style.display = "none";
+        }
+}
     </script>
     </body>
     
 </html>
+
 
