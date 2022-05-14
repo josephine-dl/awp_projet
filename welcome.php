@@ -1,10 +1,10 @@
 <?php 
+    include_once ('conn.php') ; 
+    session_start();
 
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    header("Location: page_accueil.php");
-}
+    if (!isset($_SESSION['username'])) {
+        header("Location: page_accueil.php");
+    }
 
 ?>
 <!DOCTYPE html>
@@ -59,25 +59,84 @@ if (!isset($_SESSION['username'])) {
                 </div>
             </header>
         </div>
+
         <section>
             <br><br><br>
 
             <div class="boxcontainer">
-                <form action="search.php" method="GET">
-                <table class="elcontainer" id=form class ="search_box" action="search.php" method="GET">
-                    <tr>
-                        <td>
-                            <input class="search-area" type="text" name="searcharea" placeholder="find your book">
-                        </td>
-                        <td>
-                            <button class="search-btn" type="submit" name="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+                <form class="d-flex" action="" method="post">
+                    <table class="elcontainer" id=form class ="search_box" action="search.php" method="GET">
+                        <tr>
+                            <td>
+                                <input class="search-area" type="search" name="search_key" placeholder="find your book or author">
+                            </td>
+                            <td>
+                                <button class="search-btn" type="submit" name="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
             </div>
+            <?php
 
+                //check if there is or not a search bar
+                $search_key = isset($_POST['search_key'])?$_POST['search_key']:'';
 
+                if ($search_key == NULL)
+                {
+                    echo"<script>alert('Please key in your search key first!');</script>";
+                }
+                else{
+                    //search the databases listAuthors and listBook
+                    $sql = "SELECT* FROM `author`, `book` WHERE `book`.id_author = `author`.id_author AND
+                        (`book`.title LIKE '%" .$search_key. "%' OR 
+                        `author`.first_name LIKE '%". $search_key. "%' OR 
+                        `author`.last_name LIKE '%". $search_key. "%')
+                        ORDER BY id_book";
+                    $result = mysqli_query($conn, $sql);
+
+                    if (mysqli_num_rows($result) <=0 ){
+                        echo"<script>alert('No Result !');</script>";
+                    }
+                    else {
+                        
+                        echo "<center>"; 
+                        //build the header of the table
+                        echo "<table style='text-align:center' width='90%'>" ; 
+                        echo " <tr bgcolor='#F0F8FF'>
+                            <th>title </th>
+                            <th>Author  </th>
+                            <th>Summary </th>
+                            <th>Genre </th>
+                            <th>Date of publication</th>
+                            <th>Publishing House </th>
+                            <th>Nb of pages </th>
+                            <th>Language </th>
+                            <th>Cover </th>
+                        </tr>" ;  
+                        
+                        //read from database and put into the table
+                        while($row = mysqli_fetch_array($result))
+                        {
+
+                            echo "<tr>" ; 
+                            // display with a table 
+                            echo "<th>".$row ['title']."</th>" ; 
+                            echo "<th>".$row ['first_name']. " " .$row ['last_name']."</th>" ; 
+                            echo "<th>".$row ['summary']. "</th>" ; 
+                            echo "<th>".$row ['genre']."</th>" ; 
+                            echo "<th>".$row ['publication_date']. "</th>" ;
+                            echo "<th>".$row ['publishing_house']."</th>" ; 
+                            echo "<th>".$row ['nb_pages']. "</th>" ;
+                            echo "<th>".$row ['language_book']."</th>" ;        
+                            echo "<th>  <img src='".$row ['cover']. "' alt='image_book'> </th>" ; 
+                            echo "</tr>" ; 
+                        }
+                        echo"</table>";
+                        echo "</center>" ; 
+                    }
+                }
+            ?>
         </section>
 
         <section>
