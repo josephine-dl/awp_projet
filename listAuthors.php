@@ -53,6 +53,7 @@
         echo "</tr>" ; 
        
     }
+    echo"</table>";
 
     mysqli_close($conn) ; 
 
