@@ -47,7 +47,7 @@
         <title>Add Book</title>
     </head>
     <body>
-        <h1>Add an Author</h1>
+    <h1>Add an Author</h1>
         <br>
         <form action="" method="post" name="frmAdd">
 

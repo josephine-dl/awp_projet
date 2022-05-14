@@ -5,13 +5,7 @@
     session_start();
 
     error_reporting(0);
-
-    $sql_query = "SELECT * FROM book, author 
-    WHERE book.id_author = author.id_author AND id_book='2'" ; 
-    $result = mysqli_query($conn, $sql_query) ;
-    $row =mysqli_fetch_assoc($result) ; 
    
-
 ?>
 
 <!DOCTYPE html>
@@ -71,58 +65,61 @@
                 //check if there is or not a search bar
                 $search_key = isset($_POST['search_key'])?$_POST['search_key']:'';
 
-                if ($search_key == NULL)
+                if ($search_key == NULL && isset($_POST['Search']))
                 {
                     echo"<script>alert('Please key in your search key first!');</script>";
                 }
                 else{
-                    //search the databases listAuthors and listBook
-                    $sql = "SELECT* FROM `author`, `book` WHERE `book`.id_author = `author`.id_author AND
-                        (`book`.title LIKE '%" .$search_key. "%' OR 
-                        `author`.first_name LIKE '%". $search_key. "%' OR 
-                        `author`.last_name LIKE '%". $search_key. "%')
-                        ORDER BY id_book";
-                    $result = mysqli_query($conn, $sql);
+                    if (isset($_POST['Search'])){
 
-                    if (mysqli_num_rows($result) <=0 ){
-                        echo"<script>alert('No Result !');</script>";
-                    }
-                    else {
-                        
-                        echo "<center>"; 
-                        //build the header of the table
-                        echo "<table style='text-align:center' width='90%'>" ; 
-                        echo " <tr bgcolor='#F0F8FF'>
-                            <th>title </th>
-                            <th>Author  </th>
-                            <th>Summary </th>
-                            <th>Genre </th>
-                            <th>Date of publication</th>
-                            <th>Publishing House </th>
-                            <th>Nb of pages </th>
-                            <th>Language </th>
-                            <th>Cover </th>
-                        </tr>" ;  
-                        
-                        //read from database and put into the table
-                        while($row = mysqli_fetch_array($result))
-                        {
+                        //search the databases listAuthors and listBook
+                        $sql = "SELECT* FROM `author`, `book` WHERE `book`.id_author = `author`.id_author AND
+                            (`book`.title LIKE '%" .$search_key. "%' OR 
+                            `author`.first_name LIKE '%". $search_key. "%' OR 
+                            `author`.last_name LIKE '%". $search_key. "%')
+                            ORDER BY id_book";
+                        $result = mysqli_query($conn, $sql);
 
-                            echo "<tr>" ; 
-                            // display with a table 
-                            echo "<th>".$row ['title']."</th>" ; 
-                            echo "<th>".$row ['first_name']. " " .$row ['last_name']."</th>" ; 
-                            echo "<th>".$row ['summary']. "</th>" ; 
-                            echo "<th>".$row ['genre']."</th>" ; 
-                            echo "<th>".$row ['publication_date']. "</th>" ;
-                            echo "<th>".$row ['publishing_house']."</th>" ; 
-                            echo "<th>".$row ['nb_pages']. "</th>" ;
-                            echo "<th>".$row ['language_book']."</th>" ;        
-                            echo "<th>  <img src='".$row ['cover']. "' alt='image_book'> </th>" ; 
-                            echo "</tr>" ; 
+                        if (mysqli_num_rows($result) <=0 ){
+                            echo"<script>alert('No Result !');</script>";
                         }
-                        echo"</table>";
-                        echo "</center>" ; 
+                        else {
+
+                            echo "<center>"; 
+                            //build the header of the table
+                            echo "<table style='text-align:center' width='90%'>" ; 
+                            echo " <tr bgcolor='#F0F8FF'>
+                                <th>title </th>
+                                <th>Author  </th>
+                                <th>Summary </th>
+                                <th>Genre </th>
+                                <th>Date of publication</th>
+                                <th>Publishing House </th>
+                                <th>Nb of pages </th>
+                                <th>Language </th>
+                                <th>Cover </th>
+                            </tr>" ;  
+                            
+                            //read from database and put into the table
+                            while($row = mysqli_fetch_array($result))
+                            {
+
+                                echo "<tr>" ; 
+                                // display with a table 
+                                echo "<th>".$row ['title']."</th>" ; 
+                                echo "<th>".$row ['first_name']. " " .$row ['last_name']."</th>" ; 
+                                echo "<th>".$row ['summary']. "</th>" ; 
+                                echo "<th>".$row ['genre']."</th>" ; 
+                                echo "<th>".$row ['publication_date']. "</th>" ;
+                                echo "<th>".$row ['publishing_house']."</th>" ; 
+                                echo "<th>".$row ['nb_pages']. "</th>" ;
+                                echo "<th>".$row ['language_book']."</th>" ;        
+                                echo "<th>  <img src='".$row ['cover']. "' alt='image_book'> </th>" ; 
+                                echo "</tr>" ; 
+                            }
+                            echo"</table>";
+                            echo "</center>" ; 
+                        }
                     }
                 }
 
@@ -307,14 +304,14 @@
                     <div class="swiper-slide card">
                         <div class="card-content">
                             <div class="image">
-                                <img src="" alt="Picture of book">
+                                <img src="../book_cover/born_a_crime_noah.jpg" alt="Picture of born a crime" width="185" heigh="310">
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide card">
                         <div class="card-content">
-                            <div class="image">
-                                <img src="" alt="Picture of book">
+                            <div >
+                                <img src="../book_cover/les_fiances_de_l_hiver_dabos.jpg" alt="Picture of les fiancés de l'hiver" width="185" heigh="310">
                             </div>
                         </div>
                     </div>
