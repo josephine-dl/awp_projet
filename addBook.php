@@ -16,6 +16,8 @@
             $cover = $_POST['cover'] ; 
             $bcover = "../book_cover/".$cover ; 
 
+            // replace the ' with ’
+            $summary =str_replace("'","’", $summary);
     
             $sql_update = "INSERT INTO `book`(`publishing_house`, 
             `nb_pages`, `cover`, `summary`, `genre`, `publication_date`, 
@@ -45,13 +47,12 @@
         <title>Add Book</title>
     </head>
     <body>
-
-        
+        <h1>Add an Author</h1>
         <br>
         <form action="" method="post" name="frmAdd">
 
             Title <input type="text" value="" name="title"> <br>
-            Summary <input type="text" value="" name="summary"> <br>
+            Summary <textarea name="summary" required="required"></textarea> <br>
             Genre <input type="text" value="" name="genre"> <br>
             Number of pages <input type="number" value="" name="pages"> <br>
             Date of publication <input type="date" value="" name="date"> <br>

@@ -19,6 +19,9 @@
             $descr = $_POST['descr'] ;
             $pic = $_POST['pic'] ;
 
+            // replace the ' with ’
+            $descr =str_replace("'","’", $descr);
+
             $sql_update = "UPDATE `author` SET `first_name`='$fname',
                 `last_name`='$lname',`description`='$descr'
                 WHERE `id_author`='$id'" ; 
@@ -60,7 +63,7 @@
 
             Author First Name <input type="text" value="<?php echo $row['first_name'] ?>" name="fname"> <br>
             Author Last Name <input type="text" value="<?php echo $row['last_name'] ?>" name="lname"> <br>
-            Descritpion author <input type="text" value="<?php echo $row['description'] ?>" name="descr"> <br>
+            Biography of author <textarea name="descr" required="required"><?php echo $row['description'] ?></textarea> <br>
             Name of image <input type="text" value="<?php echo $row['picture'] ?>" name="pic"> <br>
             <input type="submit" value="Update Profile" name="update">
 

@@ -24,6 +24,9 @@
             $file = $_POST['file'] ;
             $cover = $_POST['cover'] ;
 
+            // replace the ' with ’
+            $summary =str_replace("'","’", $summary);
+
             $sql_update = "UPDATE `book` SET `title`='$title',
                 `summary`='$summary',`genre`='$genre',
                 `publication_date`='$date',`publishing_house`='$house',
@@ -54,7 +57,7 @@
         <title>Edit Book</title>
     </head>
     <body>
-        Profile Update 
+        Book Update 
 
         <br>
         <form action="" method="post" name="frmUpdate">
@@ -68,7 +71,7 @@
             ?>
 
             Title <input type="text" value="<?php echo $row['title'] ?>" name="title"> <br>
-            Summary <input type="text" value="<?php echo $row['summary'] ?>" name="summary"> <br>
+            Summary <textarea name="summary" required="required"><?php echo $row['summary'] ?></textarea> <br>
             Genre <input type="text" value="<?php echo $row['genre'] ?>" name="genre"> <br>
             Number of pages <input type="number" value="<?php echo $row['nb_pages'] ?>" name="pages"> <br>
             Date of publication <input type="date" value="<?php echo $row['publication_date'] ?>" name="date"> <br>

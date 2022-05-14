@@ -45,7 +45,7 @@
 
             Author First Name <input type="text" value="" name="fname"> <br>
             Author Last Name <input type="text" value="" name="lname"> <br>
-            Descritpion author <input type="text" value="" name="descr"> <br>
+            Biography of author <textarea name="descr" required="required"></textarea><br>
             Image of author <input type="file" value="" name="pic"> <br>
             <p>
                 Write the name of image with the first name of the 
@@ -61,3 +61,4 @@
         
     </body>
 </html>
+

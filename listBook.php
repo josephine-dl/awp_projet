@@ -73,11 +73,11 @@
         echo "<th>".$row ['language_book']."</th>" ;        
         echo "<th>  <img src='".$row ['cover']. "' alt='image_book'> </th>" ; 
         //echo "<th>".$row ['file']. "</th>" ;
-        echo "<th> <button name='add_dwl'><a href='".$row ['file']. "' download>
+        echo "<th> <a href='".$row ['file']. "' download>
                     <img src='download.svg' alt='download logo'>
-                </a></button>" ; 
+                </a>" ; 
         echo "</tr>" ; 
-        
+        //<button name='add_dwl'></button>
         
     }
     echo "</table>" ;
