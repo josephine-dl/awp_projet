@@ -361,3 +361,41 @@ footer img{
 
 /*================== Log In ==================*/
 
+/*================== viewBook ====================*/
+
+
+.presentation{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bookinfo{
+    margin:30px;
+}
+
+.information{
+    margin:30px;
+}
+
+.testimonies{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-sm-3{
+    margin: 30px;
+}
+
+.comments{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+table, td{
+    border: 1px solid #333;
+    margin: 50px;
+}
+
+form{
+    display: flex;
+}
