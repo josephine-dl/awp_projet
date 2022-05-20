@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Authors</title>
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+        <script src="https://kit.fontawesome.com/6c4179a31c.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    </head>
+
+    <body>
+
+        <!-- header -->
+        <div>
+            <header>
+                <div class="inner_header">
+                    <div class="logo_header">
+                        <!-- insérer le logo du site -->
+                        <img src="">
+                        <h1>Online bookstore</h1>
+                    </div>
+
+                    <ul class="navigation">
+                        <button id="button_membre" onclick="buttonFonction()"><?php echo "<h1>Welcome " . $_SESSION['username'] . "</h1>"; ?>
+                        <ul id="menu_member" style="display: none;">  
+                            <li><a href="profil.php">Profil</a></li>
+                            <li><a href="Download.php">Download</a></li>
+                            <?php 
+                            // voir comment on modifie et delete les livres
+                            if($_SESSION['username'] == 'admin'){
+                                echo "<li><a href='Modify.php'>Gestion of book</a></li>";
+                                echo "<li><a href='delete.php'>Gestion of author</a></li>";
+                                echo "<li><a href='listuser.php'>List of User</a></li>";
+                            }
+                            ?>
+                            <li><a href="logout.php">Logout</a></li>
+                        </ul></button>
+                    </ul>
+                </div>
+            </header>
+        </div>
+
+        <div class="author">
+            <div class="Name">
+                <p>
+                    <center>
+                        <br>
+                        <h1>Author</h1>
+                        <br>
+                    </center>
+                </p>
+            </div>
+            <div class="presentation">
+                <div class="picture">
+                    <p>
+                        <img src=" " width="250" height="400">
+                        <br>
+                        <br>
+                    </p>
+                </div>
+                <div class="information">
+                    <div class="description">
+                        <p>
+                            Description
+                        </p>
+                    </div>
+                </div>
+                <div class="testimonies">
+                    <div class="col-sm-3">
+                        <div class="card bg-light">
+                            <img src="camille.jpg" class="card-img-top" alt="camille" >
+                            <div class="card-body">
+                            <h5 class="card-title">Creating a website for a e-commerce</h5>
+                            <p class="card-text">
+                                text
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-sm-3">
+                        <div class="card bg-light">
+                            <img src="iona.jpeg" class="card-img-top" alt="iona">
+                            <div class="card-body">
+                            <h5 class="card-title">Creating a website for a e-commerce</h5>
+                            <p class="card-text">
+                                text 
+                            </p>                    
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-sm-3">
+                        <div class="card bg-light">
+                            <img src="anaelle.jpg" class="card-img-top" alt="anaelle">
+                            <div class="card-body">
+                            <h5 class="card-title">Creating a portefolio website </h5>
+                            <p class="card-text">
+                                text 
+                            </p>                    
+                        </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-sm-3">
+                        <div class="card bg-light">
+                            <img src="maelys.jpg" class="card-img-top" alt="maelys">
+                            <div class="card-body">
+                            <h5 class="card-title">Creating a website for a club</h5>
+                            <p class="card-text">
+                                text   
+                            </p>                    
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comments">
+                <form name="comments" align="center">
+                    <table class="table table-striped">
+                        <tr>
+                            <td>
+                                <input type ="text" class="form-control" id = "username" name = "username" placeholder = "Username" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <textarea name="feedback" class="form-control"  id="feedback" cols="50" rows="5" placeholder="Your feedback..." required></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" class="btn btn-secondary" value="Send Feedback" id="submit">
+                                <input type="reset" class="btn btn-light" value="Clear">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <Footer>
+            <p>Online Bookstore</p>
+            <br>
+            <img src="" alt="logo site">
+        
+            <div class="social">
+                <a href="https://www.instagram.com/myriam__94/" target="_blank" class="instagram"><i class="icofont-instagram"></i></a>
+                <a href="https://www.facebook.com/myriam.amor.520"  target="_blank" class="facebook"><i class="icofont-facebook"></i></a>
+                <a href="https://www.linkedin.com/feed/" target="_blank" class="linkedin"><i class="icofont-linkedin"></i></a>
+                <a href="https://github.com/MyriamEfrei" target="_blank" class="github"><i class="icofont-github"></i></a>
+                <a href="mailto:myriam.amor@efrei.net" target="_blank" class="email"><i class="icofont-email"></i></a>
+            </div>
+            <nav class="nav-menu nav-menu-none nav-menu-lg-block">
+                <ul>
+                    <a href="about/about.php"><li>About Us</li></a>
+                    <a href="log-in/login.php"><li>Log In</li></a>
+                </ul>
+            </nav>
+            <p class="end"><i class="fa-solid fa-copyright"></i>CopyRight By MCJ</p>
+        </Footer>
+
+    </body>
+
+</html>
