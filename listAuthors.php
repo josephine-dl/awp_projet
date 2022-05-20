@@ -9,7 +9,7 @@
     </head>
     <body>
         <a href="welcome.php">HomePage</a>
-        <h1>List of authors </h1>
+        <h1>List of auhtors </h1>
         <a href="addAuthor.php">Add an author </a>
         <br>
         <a href="listBook.php">View the list of books </a>

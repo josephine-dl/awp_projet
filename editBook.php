@@ -57,7 +57,7 @@
         <title>Edit Book</title>
     </head>
     <body>
-        Update book  
+        Book Update 
 
         <br>
         <form action="" method="post" name="frmUpdate">

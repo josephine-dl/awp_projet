@@ -48,7 +48,7 @@
         <title>Edit author</title>
     </head>
     <body>
-        Update Author
+        Profile Update 
 
         <br>
         <form action="" method="post" name="frmUpdate">

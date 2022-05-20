@@ -51,7 +51,7 @@ header{
 .navigation #button_membre{
     color: white;
     background-color: rgb(47,79,79,0.7);
-    border-color: #rgb(47,79,79);
+    border-color: rgb(47,79,79);
     padding: 20px;
 }
 
@@ -69,6 +69,10 @@ header{
     font-size: 150%;
     transition: 0.5s;
     color:#1E90FF;
+}
+
+.navigation li{
+    padding:25px;
 }
 /*
 .navigation .menu_membre{
@@ -366,6 +370,7 @@ footer .nav-menu .txt-footer:hover{
     cursor: pointer;
     transition: 0.4s;
     box-sizing: border-box;
+    border-radius: 50%;
 }
 
 .teams:hover {
@@ -376,6 +381,7 @@ footer .nav-menu .txt-footer:hover{
 .teams img {
     width: 200px;
     height: 200px;
+    
 }
 
 .name {
@@ -421,5 +427,152 @@ footer .nav-menu .txt-footer:hover{
     }
 }
 
-
 /*================== End about us ==================*/
+
+/*================== Profil ==================*/
+
+.container-profil{
+    height: auto;
+    width: auto;
+    margin: 20px auto;
+    padding:20px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    
+}
+
+.all-group {
+    padding: 50px;
+} 
+
+.container-profil .profil-text {
+    color: #111;
+    font-weight: 500;
+    padding:10px;
+    padding-left: 45%;
+    text-transform: capitalize;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.all-group table, tr, td{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+
+
+.all-group  .input-group table, tr, td {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #e7e7e7;
+    padding: 15px 20px;
+    font-size: 1rem;
+    text-align: center;
+    background: #FFF;
+    outline: none;
+    transition: .3s;
+}
+
+
+@media (max-width: 430px) {
+    .container {
+        width: 300px;
+    }
+}
+/*================== End Profil ==================*/
+
+/*================== Edit Profil ==================*/
+
+.bodybisprofil{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(bg.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-edit {
+    width: 400px;
+    min-height: 400px;
+    background: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    padding: 40px 30px;
+}
+
+.container h2 {
+    color: #111;
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    text-transform: capitalize;
+}
+
+.container-edit .edit-profil .inputg{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+    margin-top:40px;
+}
+.container-edit .edit-profil .inputg p{
+    padding-bottom:5px;
+}
+
+.container-edit .edit-profil .inputg input {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #e7e7e7;
+    padding-top:25px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    background: transparent;
+    outline: none;
+    transition: .3s;
+}
+
+.container-edit .disco p{
+    color: red;
+}
+
+
+.container-edit .edit-profil .inputg input:focus,
+.container-edit .edit-profil .inputg input:valid {
+    border-color: #a29bfe;
+}
+
+.container-edit .edit-profil .inputg .btn {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: center;
+    border: none;
+    background: #2F4F4F;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container-edit .edit-profil .inputg .btn:hover {
+    transform: translateY(-5px);
+    background: #5a9696;
+} 
+
+@media (max-width: 430px) {
+    .container-edit {
+        width: 300px;
+    }
+}
+
+/*================== End Edit Profil ==================*/
